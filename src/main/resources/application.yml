@@ -1,0 +1,19 @@
+server:
+  port : 9001
+  
+spring:
+ application:
+  name: LISTING-SERVICE
+  
+profiles: container
+jpa:
+    database: MYSQL
+    hibernate:
+        ddl-auto: validate
+
+
+datasource:
+    url: jdbc:mysql://ifarmdb.c3atve3r4hy0.ap-southeast-1.rds.amazonaws.com:3306/ifarm
+    username: admin
+    password: admin123
+    driver-class-name: com.mysql.jdbc.Driver
