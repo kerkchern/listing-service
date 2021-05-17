@@ -7,7 +7,7 @@ eureka:         #tells about the Eureka server details and its refresh time
     leaseExpirationDurationInSeconds: 2
   client:
     serviceUrl:
-      defaultZone: http://122.248.228.175:8761/eureka/
+      defaultZone: http://13.229.243.16:8761/eureka/
     lease:
       duration: 5
       
