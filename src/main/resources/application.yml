@@ -1,9 +1,23 @@
 server:
   port : 9001
   
+eureka:         #tells about the Eureka server details and its refresh time
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+  client:
+    serviceUrl:
+      defaultZone: http://122.248.228.175:8761/eureka/
+    lease:
+      duration: 5
+      
 spring:
  application:
-  name: LISTING-SERVICE
+  name: LISTING-SERVICE		#current service name to be used by the eureka server
+
+management:
+  security:
+    enabled: false  #disable the spring security on the management endpoints like /env, /refresh etc.
   
 profiles: container
 jpa:
@@ -13,14 +27,7 @@ jpa:
 
 
 datasource:
-    url: jdbc:mysql://ec2-3-141-98-206.us-east-2.compute.amazonaws.com:8137/ifarm
     username: admin
     password: admin123
     driver-class-name: com.mysql.jdbc.Driver
-    
-eureka:
-   client:
-      serviceUrl:
-         defaultZone: http://13.229.219.169:8761/eureka
-      instance:
-      preferIpAddress: true
+    driver-class-name: com.mysql.jdbc.Driver
